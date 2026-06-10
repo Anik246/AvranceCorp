@@ -50,9 +50,6 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
         ) : (
           <div className={`absolute inset-0 bg-linear-to-br ${project.gradient}`} />
         )}
-        <div className={`absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-semibold text-white ${project.status === "Completed" ? "bg-primary" : "bg-accent/80 backdrop-blur-sm"}`}>
-          {project.status}
-        </div>
       </div>
 
       <div className="bg-accent px-6 py-5">
