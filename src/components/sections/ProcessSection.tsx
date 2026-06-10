@@ -66,7 +66,7 @@ export function ProcessSection() {
             Our Development <span className="text-primary">Process</span>
           </h2>
           <div className="mt-4 mx-auto h-1 w-12 bg-primary rounded-full" />
-          <p className="mt-5 text-lg leading-relaxed text-text-secondary max-w-md mx-auto">
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-text-secondary max-w-md mx-auto">
             From vision to reality, we follow a proven process to deliver exceptional developments.
           </p>
         </motion.div>
@@ -77,9 +77,9 @@ export function ProcessSection() {
             <div key={rowIdx} className="relative">
 
               {/* Horizontal dashed connector — desktop only */}
-              <div className="hidden lg:block absolute top-5 left-[16.67%] right-[16.67%] h-px border-t-2 border-dashed border-primary/20" />
+              <div className="hidden md:block absolute top-5 left-[16.67%] right-[16.67%] h-px border-t-2 border-dashed border-primary/20" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {rowSteps.map((step, i) => (
                   <motion.div
                     key={step.number}
@@ -112,7 +112,7 @@ export function ProcessSection() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm leading-relaxed text-text-secondary max-w-50">
+                    <p className="text-sm leading-relaxed text-text-secondary max-w-none md:max-w-50">
                       {step.description}
                     </p>
                   </motion.div>

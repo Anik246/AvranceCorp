@@ -68,7 +68,7 @@ export function HeroSection() {
 
       {/* ── Content — staggered reveal ───────────────────────────── */}
       <div className="relative z-10 flex flex-1 flex-col justify-center">
-        <div className="mx-auto w-full max-w-7xl px-8 sm:px-10 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
 
           {/* Heading line 1 */}
           <div className="overflow-hidden pb-1">
@@ -77,7 +77,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
-              className="font-display text-5xl font-medium leading-[1.15] tracking-tight sm:text-6xl lg:text-7xl"
+              className="font-display text-4xl font-medium leading-[1.15] tracking-tight sm:text-5xl lg:text-7xl"
             >
               <span className="bg-linear-to-b from-white via-white/90 to-white/55 bg-clip-text text-transparent">
                 Superior Quality
@@ -92,7 +92,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.28 }}
-              className="font-display text-5xl font-medium leading-[1.15] tracking-tight sm:text-6xl lg:text-7xl"
+              className="font-display text-4xl font-medium leading-[1.15] tracking-tight sm:text-5xl lg:text-7xl"
             >
               <em className="not-italic bg-linear-to-r from-[#C41230] via-[#E8192C] to-[#C41230] bg-clip-text text-transparent">From Concept to Creation</em>
             </motion.div>
@@ -104,7 +104,7 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.8, ease, delay: 0.42 }}
-            className="mt-5 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base"
+            className="mt-5 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg"
           >
             AvranceCorp Developments embarks on projects from conception
             right through development and construction with precision.
@@ -116,18 +116,18 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.8, ease, delay: 0.58 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-primary-dark"
+              className="inline-flex w-full justify-center items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-primary-dark sm:w-auto sm:justify-start"
             >
               Explore Projects
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact#invest"
-              className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:border-white/60 hover:bg-white/15"
+              className="inline-flex w-full justify-center items-center gap-2 rounded-md border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:border-white/60 hover:bg-white/15 sm:w-auto sm:justify-start"
             >
               <Building2 className="h-4 w-4" />
               Partner With Us
@@ -140,7 +140,7 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.8, ease, delay: 0.72 }}
-            className="mt-10 flex flex-wrap items-center gap-5"
+            className="mt-10 hidden sm:flex flex-wrap items-center gap-5"
           >
             {stats.map((stat, i) => (
               <div key={stat.label} className={`flex flex-col ${i !== 0 ? "pl-5 border-l border-white/20" : ""}`}>

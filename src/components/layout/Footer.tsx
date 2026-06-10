@@ -55,10 +55,10 @@ export function Footer() {
       <div className="h-1 bg-primary" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
 
           {/* Brand column */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Image
                 src="/image/dakLogo.png"

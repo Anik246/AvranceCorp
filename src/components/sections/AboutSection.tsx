@@ -88,7 +88,7 @@ export function AboutSection() {
                   key={item.label}
                   variants={fadeUp}
                   transition={defaultTransition}
-                  className="flex flex-col items-center justify-center gap-2 bg-white p-10 text-center"
+                  className="flex flex-col items-center justify-center gap-2 bg-white p-6 sm:p-10 text-center"
                 >
                   <span className="font-display text-3xl font-bold whitespace-pre-line text-accent leading-tight">
                     {item.value}

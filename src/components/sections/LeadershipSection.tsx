@@ -24,7 +24,7 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <section className="bg-[var(--color-bg)] py-24 lg:py-32">
+    <section className="bg-[var(--color-bg)] py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
 
         {/* Header */}
@@ -77,7 +77,7 @@ export function LeadershipSection() {
                 </div>
 
                 {/* Content */}
-                <div className="px-8 py-7">
+                <div className="px-6 py-6 sm:px-8 sm:py-7">
                   <h3 className="font-display text-2xl font-bold text-[var(--color-accent)]">
                     {leader.name}
                   </h3>

@@ -48,7 +48,7 @@ export function WhyUsSection() {
             WHY <span className="text-primary">CHOOSE</span> US
           </h2>
           <div className="mt-4 mx-auto h-1 w-12 bg-primary rounded-full" />
-          <p className="mt-5 text-lg leading-relaxed text-text-secondary max-w-xl mx-auto">
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-text-secondary max-w-xl mx-auto">
             Choosing the right developer means choosing trust, transparency, and results.
             Our hands-on approach and proven track record set us apart at every stage.
           </p>
@@ -67,7 +67,7 @@ export function WhyUsSection() {
               key={item.title}
               variants={fadeUp}
               transition={{ ...defaultTransition, delay: i * 0.1 }}
-              className="group flex flex-col items-center text-center px-8 py-12 bg-white hover:bg-primary/2 transition-colors duration-300"
+              className="group flex flex-col items-center text-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12 bg-white hover:bg-primary/2 transition-colors duration-300"
             >
               {/* Icon */}
               <div className="relative mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
@@ -86,7 +86,7 @@ export function WhyUsSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm leading-relaxed text-text-primary max-w-48">
+              <p className="text-sm leading-relaxed text-text-primary max-w-none lg:max-w-48">
                 {item.description}
               </p>
             </motion.div>

@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: "AvranceCorp Developments | Building Quality Communities",
   description:
     "AvranceCorp Developments delivers exceptional residential and mixed-use developments across Canada and the United States.",
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "695x680", type: "image/png" },
+    ],
+    apple: { url: "/icon.png", sizes: "695x680", type: "image/png" },
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col overflow-x-hidden">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -14,7 +14,7 @@ const pillars = [
 
 export function InvestmentSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-110">
+    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-110 overflow-hidden">
 
       {/* Left — floating photo collage */}
       <motion.div
@@ -73,7 +73,7 @@ export function InvestmentSection() {
         whileInView="visible"
         viewport={viewportOnce}
         transition={defaultTransition}
-        className="relative bg-[#0D0D1A] flex flex-col justify-center px-10 py-20 lg:px-16 xl:px-20"
+        className="relative bg-[#0D0D1A] flex flex-col justify-center px-6 py-12 sm:px-10 sm:py-16 lg:px-16 xl:px-20"
       >
         {/* Subtle red glow */}
         <div className="absolute top-0 right-0 h-100 w-100 -translate-y-1/3 translate-x-1/3 rounded-full bg-primary opacity-[0.07] blur-[100px] pointer-events-none" />
@@ -91,7 +91,7 @@ export function InvestmentSection() {
           <div className="mt-4 h-1 w-12 bg-primary rounded-full" />
 
           {/* Body */}
-          <p className="mt-6 text-lg leading-relaxed text-white/60 max-w-md">
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-white/60 max-w-md">
             We actively collaborate with investors, landowners, and strategic partners
             to develop high-value real estate projects across Canada.
           </p>
@@ -125,14 +125,14 @@ export function InvestmentSection() {
             whileInView="visible"
             viewport={viewportOnce}
             transition={{ ...defaultTransition, delay: 0.35 }}
-            className="mt-10 flex flex-wrap items-center gap-5"
+            className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5"
           >
             <p className="text-sm font-semibold text-white/70">
               Are you looking for a Joint Venture Partnership?
             </p>
             <Link
               href="/contact#joint-venture"
-              className="shrink-0 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
+              className="w-full justify-center sm:w-auto inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
             >
               Contact Us
               <ArrowRight className="h-4 w-4" />

@@ -8,7 +8,7 @@ import { fadeUp, defaultTransition, viewportOnce } from "@/lib/animations";
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-white via-[#FFF5F5] to-[#FFE8E8] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-linear-to-br from-white via-[#FFF5F5] to-[#FFE8E8] py-16 sm:py-24 lg:py-32">
       <BuildingWatermark className="absolute bottom-0 right-0 h-[60%] text-accent opacity-[0.04] pointer-events-none" />
 
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center">
@@ -39,17 +39,17 @@ export function CtaSection() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-colors duration-200 hover:bg-primary-dark"
+              className="w-full justify-center inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-colors duration-200 hover:bg-primary-dark sm:w-auto"
             >
               Contact Us
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 rounded-md border border-border px-8 py-4 text-base font-semibold text-accent transition-all duration-200 hover:border-primary hover:text-primary"
+              className="w-full justify-center inline-flex items-center gap-2 rounded-md border border-border px-8 py-4 text-base font-semibold text-accent transition-all duration-200 hover:border-primary hover:text-primary sm:w-auto"
             >
               Explore Projects
             </Link>

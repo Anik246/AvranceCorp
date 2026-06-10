@@ -12,7 +12,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--color-accent)] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-[var(--color-accent)] py-16 sm:py-24 lg:py-32">
       {/* Background accent */}
       <div className="absolute left-0 top-0 h-full w-1 bg-[var(--color-primary)]" />
       <div className="absolute -right-40 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-[var(--color-primary)] opacity-5" />
@@ -53,9 +53,9 @@ export function StatsSection() {
               key={stat.label}
               variants={fadeUp}
               transition={defaultTransition}
-              className="flex flex-col gap-3 bg-[var(--color-accent)] px-8 py-10 hover:bg-[var(--color-accent-light)] transition-colors duration-300"
+              className="flex flex-col gap-3 bg-[var(--color-accent)] px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10 hover:bg-accent-light transition-colors duration-300"
             >
-              <span className="font-display text-5xl font-bold text-[var(--color-primary)] lg:text-6xl">
+              <span className="font-display text-4xl font-bold text-[var(--color-primary)] sm:text-5xl lg:text-6xl">
                 {stat.value}
               </span>
               <div className="flex flex-col gap-1">
