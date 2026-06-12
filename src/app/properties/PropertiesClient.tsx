@@ -93,7 +93,7 @@ export function PropertiesClient() {
                 initial={{ opacity: 0, y: 24, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -12, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.3, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] as any }}
                 className="group block overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_48px_rgba(196,18,48,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Image / Gradient */}
