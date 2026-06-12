@@ -71,7 +71,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         address={project.address}
         status={project.status}
         image={project.image}
-        gradient={project.gradient}
+        gradient={project.gradient ?? undefined}
       />
 
       {/* Section */}
