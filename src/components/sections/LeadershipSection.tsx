@@ -60,26 +60,26 @@ export function LeadershipSection() {
               >
                 <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)]">
                   {leader.photo ? (
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-44 sm:h-52 lg:h-60 overflow-hidden">
                       <Image
                         src={leader.photo}
                         alt={leader.name}
                         fill
                         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                     </div>
                   ) : (
-                    <div className={`relative h-64 bg-linear-to-br ${leader.gradient} flex items-center justify-center`}>
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white/20 bg-white/10 backdrop-blur-sm">
-                        <span className="font-display text-3xl font-bold text-white">{leader.initials}</span>
+                    <div className={`relative h-44 sm:h-52 lg:h-60 bg-linear-to-br ${leader.gradient} flex items-center justify-center`}>
+                      <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border-4 border-white/20 bg-white/10 backdrop-blur-sm">
+                        <span className="font-display text-xl sm:text-2xl font-bold text-white">{leader.initials}</span>
                       </div>
                     </div>
                   )}
-                  <div className="px-5 py-4">
-                    <h3 className="font-display text-lg font-bold text-accent">{leader.name}</h3>
-                    <p className="mt-1 text-xs font-semibold tracking-wide text-primary uppercase">{leader.title}</p>
+                  <div className="px-3 py-3 sm:px-5 sm:py-4">
+                    <h3 className="font-display text-sm font-bold text-accent sm:text-base lg:text-lg leading-snug">{leader.name}</h3>
+                    <p className="mt-1 text-[10px] sm:text-xs font-semibold tracking-wide text-primary uppercase">{leader.title}</p>
                   </div>
                 </div>
               </motion.div>
@@ -117,7 +117,7 @@ export function LeadershipSection() {
               >
                 <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)]">
                   {member.photo ? (
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-44 sm:h-52 lg:h-60 overflow-hidden">
                       <Image
                         src={member.photo}
                         alt={member.name}
@@ -128,15 +128,15 @@ export function LeadershipSection() {
                       <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                     </div>
                   ) : (
-                    <div className={`relative h-64 bg-linear-to-br ${member.gradient} flex items-center justify-center`}>
+                    <div className={`relative h-44 sm:h-52 lg:h-60 bg-linear-to-br ${member.gradient} flex items-center justify-center`}>
                       <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white/20 bg-white/10 backdrop-blur-sm">
                         <span className="font-display text-3xl font-bold text-white">{member.initials}</span>
                       </div>
                     </div>
                   )}
-                  <div className="px-5 py-4">
-                    <h3 className="font-display text-lg font-bold text-accent">{member.name}</h3>
-                    <p className="mt-1 text-xs font-semibold tracking-wide text-primary uppercase">{member.title}</p>
+                  <div className="px-3 py-3 sm:px-5 sm:py-4">
+                    <h3 className="font-display text-sm font-bold text-accent sm:text-base lg:text-lg leading-snug">{member.name}</h3>
+                    <p className="mt-1 text-[10px] sm:text-xs font-semibold tracking-wide text-primary uppercase">{member.title}</p>
                   </div>
                 </div>
               </motion.div>
