@@ -11,7 +11,10 @@ import type { Project } from "@/data/projects";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group cursor-pointer overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.18)] transition-shadow duration-300">
+    <Link
+      href="/properties"
+      className="group block overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.18)] transition-shadow duration-300"
+    >
       <div className="relative h-52 sm:h-64 overflow-hidden">
         {project.image ? (
           <Image
@@ -39,15 +42,12 @@ function ProjectCard({ project }: { project: Project }) {
             <MapPin className="h-3.5 w-3.5 shrink-0" />
             {project.location}
           </div>
-          <Link
-            href="/properties"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 group-hover:border-primary group-hover:bg-primary"
-          >
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 group-hover:border-primary group-hover:bg-primary">
             <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
