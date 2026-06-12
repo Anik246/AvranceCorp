@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     "AvranceCorp Developments delivers exceptional residential and mixed-use developments across Canada and the United States.",
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "695x680", type: "image/png" },
+      { url: "/image/favicon.jpg", type: "image/jpeg" },
     ],
-    apple: { url: "/icon.png", sizes: "695x680", type: "image/png" },
+    apple: { url: "/image/favicon.jpg", type: "image/jpeg" },
   },
 };
 

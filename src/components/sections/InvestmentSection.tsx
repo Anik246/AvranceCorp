@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { fadeUp, slideInLeft, slideInRight, defaultTransition, viewportOnce } from "@/lib/animations";
 
 const pillars = [
@@ -85,7 +83,7 @@ export function InvestmentSection() {
           </span>
 
           {/* Heading */}
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-white sm:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
             Partner <span className="text-primary">With Us</span>
           </h2>
           <div className="mt-4 h-1 w-12 bg-primary rounded-full" />
@@ -118,26 +116,6 @@ export function InvestmentSection() {
             ))}
           </div>
 
-          {/* JV callout */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            transition={{ ...defaultTransition, delay: 0.35 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5"
-          >
-            <p className="text-sm font-semibold text-white/70">
-              Are you looking for a Joint Venture Partnership?
-            </p>
-            <Link
-              href="/contact#joint-venture"
-              className="w-full justify-center sm:w-auto inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
-            >
-              Contact Us
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
         </div>
       </motion.div>
 

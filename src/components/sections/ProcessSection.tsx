@@ -62,7 +62,7 @@ export function ProcessSection() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             How We Work
           </span>
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-accent sm:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-accent sm:text-4xl lg:text-5xl">
             Our Development <span className="text-primary">Process</span>
           </h2>
           <div className="mt-4 mx-auto h-1 w-12 bg-primary rounded-full" />

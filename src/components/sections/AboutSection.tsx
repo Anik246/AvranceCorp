@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { fadeUp, slideInLeft, slideInRight, defaultTransition, viewportOnce, staggerContainer } from "@/lib/animations";
 
 const highlights = [
-  { value: "2016", label: "Year Founded" },
+  { value: "2016",   label: "Year Founded" },
+  { value: "7,000+", label: "Residential Units" },
+  { value: "$4B+",   label: "Portfolio Value" },
   { value: "Canada\n& USA", label: "Operations" },
-  { value: "Full-Cycle", label: "Development" },
-  { value: "Multiple", label: "Projects" },
 ];
 
 export function AboutSection() {
@@ -42,24 +42,18 @@ export function AboutSection() {
               </span>
             </div>
 
-            <h2 className="font-display text-4xl font-bold leading-tight text-accent sm:text-5xl">
-              Creating Value Through{" "}
-              <span className="text-primary">Real Estate Development</span>
+            <h2 className="font-display text-3xl font-bold leading-tight text-accent sm:text-4xl lg:text-5xl">
+              Connecting People, Passion{" "}
+              <span className="text-primary">and Purpose to Place</span>
             </h2>
             <div className="mt-4 h-1 w-12 bg-primary rounded-full" />
 
             <div className="mt-8 space-y-5 text-base leading-relaxed text-text-primary">
               <p>
-                Founded in 2016, AvranceCorp Developments is a full-service real
-                estate development company committed to delivering high-quality
-                residential communities and investment opportunities.
+                Founded in 2016, AvranceCorp Developments is a Tarion-licensed Canadian real estate developer with a $4B+ portfolio and 7,000+ residential units in active development across Ontario and the United States.
               </p>
               <p>
-                Our team manages every stage of the development lifecycle,
-                including land acquisition, planning, design, construction, and
-                project delivery. Through strategic partnerships and innovative
-                development practices, we create sustainable projects that
-                benefit homeowners, investors, and communities.
+                Guided by urban planning principles and a commitment to innovation, our team manages every stage of the development lifecycle — from land acquisition and planning through design, construction, and project delivery. We create sustainable communities that balance affordability, investor value, and long-term quality of life.
               </p>
             </div>
           </motion.div>

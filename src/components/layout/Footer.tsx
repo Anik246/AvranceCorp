@@ -43,9 +43,9 @@ const FOOTER_LINKS = {
 };
 
 const SOCIAL = [
-  { icon: LinkedinIcon, label: "LinkedIn", href: "#" },
-  { icon: FacebookIcon, label: "Facebook", href: "#" },
-  { icon: InstagramIcon, label: "Instagram", href: "#" },
+  { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/avrancecorp-development/posts/?feedView=all" },
+  { icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/AvranceCorpDevelopments/" },
+  { icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/avrancecorp_developments/" },
 ];
 
 export function Footer() {
@@ -77,7 +77,7 @@ export function Footer() {
             {/* Contact */}
             <div className="flex flex-col gap-3 mt-2">
               {[
-                { icon: MapPin, text: "North York, Ontario, Canada" },
+                { icon: MapPin, text: "Unit 1-2, 4205 Keele St, North York, ON M3J 3T8" },
                 { icon: Phone, text: "647-368-7108", href: "tel:6473687108" },
                 { icon: Mail, text: "info@avrancecorp.com", href: "mailto:info@avrancecorp.com" },
               ].map(({ icon: Icon, text, href }) => (
@@ -99,6 +99,8 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/40 transition-all duration-200 hover:border-primary hover:text-primary"
                 >
                   <Icon />

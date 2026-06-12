@@ -12,10 +12,10 @@ const slides = [
 ];
 
 const stats = [
-  { value: "2016", label: "Year Established" },
-  { value: "5+",   label: "Projects Completed" },
-  { value: "2",    label: "Countries" },
-  { value: "100%", label: "End-to-End Delivery" },
+  { value: "2016",   label: "Year Established" },
+  { value: "7,000+", label: "Residential Units" },
+  { value: "$4B+",   label: "Portfolio Value" },
+  { value: "100%",   label: "End-to-End Delivery" },
 ];
 
 const reveal = {
@@ -92,7 +92,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.28 }}
-              className="font-display text-4xl font-medium leading-[1.15] tracking-tight sm:text-5xl lg:text-7xl"
+              className="font-display text-2xl font-medium leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
             >
               <em className="not-italic bg-linear-to-r from-[#C41230] via-[#E8192C] to-[#C41230] bg-clip-text text-transparent">From Concept to Creation</em>
             </motion.div>

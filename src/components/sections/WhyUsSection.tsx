@@ -44,7 +44,7 @@ export function WhyUsSection() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Our Difference
           </span>
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-accent sm:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-accent sm:text-4xl lg:text-5xl">
             WHY <span className="text-primary">CHOOSE</span> US
           </h2>
           <div className="mt-4 mx-auto h-1 w-12 bg-primary rounded-full" />
@@ -81,7 +81,7 @@ export function WhyUsSection() {
               <div className="h-0.5 w-0 bg-primary group-hover:w-8 transition-all duration-300 mb-4 rounded-full" />
 
               {/* Title */}
-              <h3 className="font-bold text-accent text-lg mb-3 leading-snug transition-colors duration-300 group-hover:text-primary">
+              <h3 className="font-bold text-accent text-base mb-3 leading-snug transition-colors duration-300 group-hover:text-primary sm:text-lg">
                 {item.title}
               </h3>
 

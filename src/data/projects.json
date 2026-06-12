@@ -1,0 +1,291 @@
+{
+  "projects": [
+    {
+      "title": "Georgian Bay Harbour",
+      "slug": "georgian-bay-harbour",
+      "location": "Meaford, Ontario",
+      "address": "23 & 37 Trowbridge Street East, Meaford, ON",
+      "status": "Ongoing",
+      "description": "Waterfront-inspired townhome community nestled in the heart of Meaford, offering modern amenities for growing families.",
+      "image": "/image/projects/georgian-bay-harbour/GBH-cover.png",
+      "gradient": null,
+      "featured": true,
+      "units": "100 suites",
+      "occupancy": "December 2028",
+      "website": "www.georgianbayharbour.com",
+      "sold": null,
+      "gallery": [
+        "/image/projects/georgian-bay-harbour/gbh-4.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-5.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-6.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-7.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-8.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-9.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-10.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-12.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-13.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-2.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-3.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-14.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-15.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-16.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-17.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-18.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-19.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-20.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-21.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-22.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-23.jpg",
+        "/image/projects/georgian-bay-harbour/gbh-24.jpg"
+      ],
+      "timeline": [
+        { "label": "Zoning", "value": "Approved — November 2023", "done": true },
+        { "label": "Site Plan", "value": "2026", "done": false },
+        { "label": "Building Permit", "value": "TBD", "done": false },
+        { "label": "Construction", "value": "TBD", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "Farmers' market nearby",
+        "Beach access at Georgian Bay Lake",
+        "Local grocer & restaurants",
+        "Walking distance to schools",
+        "Medical practices in Grey County",
+        "Neighbourhood gathering spaces"
+      ]
+    },
+    {
+      "title": "T-City Condos Phase II",
+      "slug": "t-city-condos-phase-ii",
+      "location": "North York, Ontario",
+      "address": "3100 Weston Road, North York, ON",
+      "status": "Ongoing",
+      "description": "Contemporary urban condominiums in the heart of North York, designed for modern professionals and investors.",
+      "image": "/image/projects/t-city-condos/tcc-cover.png",
+      "gradient": null,
+      "featured": true,
+      "units": "~1,500 units across 5 towers",
+      "occupancy": "TBD",
+      "website": null,
+      "sold": null,
+      "gallery": [
+        "/image/projects/t-city-condos/tcc-1.jpg",
+        "/image/projects/t-city-condos/tcc-2.jpg",
+        "/image/projects/t-city-condos/tcc-3.jpg",
+        "/image/projects/t-city-condos/tcc-4.jpg",
+        "/image/projects/t-city-condos/tcc-5.jpg",
+        "/image/projects/t-city-condos/tcc-6.jpg",
+        "/image/projects/t-city-condos/tcc-7.bmp",
+        "/image/projects/t-city-condos/tcc-8.bmp"
+      ],
+      "timeline": [
+        { "label": "OPA / Zoning Application", "value": "In Progress", "done": false },
+        { "label": "Site Plan", "value": "TBD", "done": false },
+        { "label": "Building Permit", "value": "TBD", "done": false },
+        { "label": "Construction", "value": "Coming Soon", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "Five landmark residential towers",
+        "Approx. 1,500 thoughtfully designed units",
+        "Proximity to Humber River transit",
+        "Views of surrounding landscape",
+        "Urban convenience meets natural beauty",
+        "Modern contemporary architecture"
+      ]
+    },
+    {
+      "title": "Wasaga Lux Condos",
+      "slug": "wasaga-lux-condos",
+      "location": "Wasaga Beach, Ontario",
+      "address": "0 Sunnidale Road, Wasaga Beach, ON",
+      "status": "Ongoing",
+      "description": "Luxury condominium residences steps from Wasaga Beach, blending resort-style living with smart investment value.",
+      "image": "/image/projects/wasaga-lux/wlc-cover.jpg",
+      "gradient": "from-[#0D0D1A] via-[#1A1A2E] to-[#9B0E26]",
+      "featured": true,
+      "units": "392 suites",
+      "occupancy": "TBD",
+      "website": null,
+      "sold": null,
+      "gallery": [
+        "/image/projects/wasaga-lux/wlc-cover.jpg",
+        "/image/projects/wasaga-lux/wlc-1.jpg",
+        "/image/projects/wasaga-lux/wlc-2.jpg",
+        "/image/projects/wasaga-lux/wlc-3.jpg",
+        "/image/projects/wasaga-lux/wlc-4.jpg",
+        "/image/projects/wasaga-lux/wlc-5.jpg"
+      ],
+      "timeline": [
+        { "label": "Zoning", "value": "Approved", "done": true },
+        { "label": "Site Plan", "value": "Approved", "done": true },
+        { "label": "Building Permit", "value": "Pending", "done": false },
+        { "label": "Construction", "value": "TBD", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "Steps from Wasaga Beach",
+        "Resort-style living",
+        "Farmers' market nearby",
+        "Local grocer & restaurants",
+        "Schools within walking distance",
+        "Strong investment value"
+      ]
+    },
+    {
+      "title": "Georgian Bay Terrace",
+      "slug": "georgian-bay-terrace",
+      "location": "Meaford, Ontario",
+      "address": "1 Legion Road, Meaford, ON",
+      "status": "Ongoing",
+      "description": "A 5-storey boutique development offering quality home functionality paired with premium lifestyle amenities in the picturesque Town of Meaford.",
+      "image": "/image/projects/georgian-bay-terrace/gbt-cover.jpg",
+      "gradient": "from-[#1A1A2E] via-[#2a2a4e] to-[#C41230]",
+      "featured": false,
+      "units": "150 suites",
+      "occupancy": "Summer 2027",
+      "website": "www.georgianbayterrace.com",
+      "sold": "80%",
+      "gallery": [
+        "/image/projects/georgian-bay-terrace/gbt-cover.jpg",
+        "/image/projects/georgian-bay-terrace/gbt-1.jpg",
+        "/image/projects/georgian-bay-terrace/gbt-2.jpg"
+      ],
+      "timeline": [
+        { "label": "Zoning", "value": "Approved", "done": true },
+        { "label": "Site Plan", "value": "Draft Approved", "done": true },
+        { "label": "Building Permit", "value": "Spring / Summer 2025", "done": true },
+        { "label": "Construction", "value": "2025", "done": true }
+      ],
+      "amenities": [
+        "State-of-the-art gymnasium",
+        "Sauna",
+        "Swimming pool",
+        "Party room / conference room",
+        "Dining room",
+        "Outdoor patios with BBQ"
+      ],
+      "highlights": null
+    },
+    {
+      "title": "Springbank Lux Condos",
+      "slug": "springbank-lux-condos",
+      "location": "London, Ontario",
+      "address": "464 Springbank Drive, London, ON",
+      "status": "Ongoing",
+      "description": "Upscale condominium living in London, Ontario, crafted for professionals seeking long-term value and quality.",
+      "image": "/image/projects/springbank-lux/slc-cover.jpg",
+      "gradient": "from-[#C41230] via-[#9B0E26] to-[#1A1A2E]",
+      "featured": false,
+      "units": "175 suites + 11 townhomes + 6 commercial spaces",
+      "occupancy": "Spring / Summer 2027",
+      "website": "www.springbanklux.ca",
+      "sold": "60%+",
+      "gallery": [
+        "/image/projects/springbank-lux/slc-cover.jpg",
+        "/image/projects/springbank-lux/slc-1.jpg",
+        "/image/projects/springbank-lux/slc-2.jpg",
+        "/image/projects/springbank-lux/slc-3.jpg",
+        "/image/projects/springbank-lux/slc-4.jpg",
+        "/image/projects/springbank-lux/slc-7.jpg",
+        "/image/projects/springbank-lux/slc-8.jpg",
+        "/image/projects/springbank-lux/slc-9.jpg",
+        "/image/projects/springbank-lux/slc-10.jpg",
+        "/image/projects/springbank-lux/slc-11.jpg",
+        "/image/projects/springbank-lux/slc-12.jpg",
+        "/image/projects/springbank-lux/slc-13.jpg",
+        "/image/projects/springbank-lux/slc-14.jpg",
+        "/image/projects/springbank-lux/slc-15.jpg",
+        "/image/projects/springbank-lux/slc-16.jpg",
+        "/image/projects/springbank-lux/slc-17.jpg"
+      ],
+      "timeline": [
+        { "label": "Zoning", "value": "Approved", "done": true },
+        { "label": "Site Plan", "value": "Approved", "done": true },
+        { "label": "Building Permit", "value": "Approved", "done": true },
+        { "label": "Construction", "value": "Spring / Summer 2025", "done": true }
+      ],
+      "amenities": null,
+      "highlights": null
+    },
+    {
+      "title": "WayneLux Estate",
+      "slug": "waynelux-estate",
+      "location": "Romulus, Michigan",
+      "address": "Romulus, Michigan, USA",
+      "status": "Ongoing",
+      "description": "An exclusive luxury estate community in Romulus, Michigan, setting a new standard for premium residential living.",
+      "image": "/image/projects/waynelux-estate-1.jpg",
+      "gradient": "from-[#1A1A2E] via-[#C41230] to-[#0D0D1A]",
+      "featured": false,
+      "units": null,
+      "occupancy": "TBD",
+      "website": null,
+      "sold": null,
+      "gallery": [
+        "/image/projects/waynelux-estate-1.jpg",
+        "/image/projects/waynelux-estate/wle-1.jpg",
+        "/image/projects/waynelux-estate/wle-2.jpg",
+        "/image/projects/waynelux-estate/wle-3.jpg",
+        "/image/projects/waynelux-estate/wle-4.jpg",
+        "/image/projects/waynelux-estate/wle-5.jpg",
+        "/image/projects/waynelux-estate/wle-6.jpg"
+      ],
+      "timeline": [
+        { "label": "Planning", "value": "In Progress", "done": false },
+        { "label": "Site Plan", "value": "TBD", "done": false },
+        { "label": "Building Permit", "value": "TBD", "done": false },
+        { "label": "Construction", "value": "TBD", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "Exclusive luxury estate community",
+        "Premium residential standard",
+        "Located in Romulus, Michigan",
+        "AvranceCorp's first US development"
+      ]
+    }
+  ],
+  "completedProjects": [
+    {
+      "title": "2720 Dundas St W",
+      "slug": "2720-dundas-st-w",
+      "location": "Toronto, Ontario",
+      "address": "2720 Dundas Street West, Toronto, ON",
+      "status": "Completed",
+      "description": "A successful joint venture residential development in the heart of Toronto's vibrant west end.",
+      "image": "/image/projects/2720-dundas-st-w/dundas-cover.png",
+      "gradient": "from-[#1A1A2E] via-[#2a2a4e] to-[#3a3a5e]"
+    },
+    {
+      "title": "1075 Queen St East",
+      "slug": "1075-queen-st-east",
+      "location": "Toronto, Ontario",
+      "address": "1075 Queen Street East, Toronto, ON",
+      "status": "Completed",
+      "description": "Premium residential units delivered on Queen Street East, one of Toronto's most sought-after corridors.",
+      "image": "/image/projects/1075-queen-st-east/queen-cover.png",
+      "gradient": "from-[#0D0D1A] via-[#1A1A2E] to-[#2a2a3e]"
+    },
+    {
+      "title": "41 Ossington Ave",
+      "slug": "41-ossington-ave",
+      "location": "Toronto, Ontario",
+      "address": "41 Ossington Avenue, Toronto, ON",
+      "status": "Completed",
+      "description": "A boutique joint venture development on Ossington Avenue, blending modern design with neighbourhood character.",
+      "image": "/image/projects/41-ossington-ave/ossington-cover.png",
+      "gradient": "from-[#1A1A2E] via-[#9B0E26] to-[#1A1A2E]"
+    },
+    {
+      "title": "3001 Finch Ave",
+      "slug": "3001-finch-ave",
+      "location": "Toronto, Ontario",
+      "address": "3001 Finch Avenue, Toronto, ON",
+      "status": "Completed",
+      "description": "High-quality residential units developed in North York, delivering strong returns for joint venture partners.",
+      "image": "/image/projects/3001-finch-ave/finch-cover.png",
+      "gradient": "from-[#0D0D1A] via-[#C41230] to-[#0D0D1A]"
+    }
+  ]
+}

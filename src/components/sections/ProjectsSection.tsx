@@ -6,36 +6,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { fadeUp, staggerContainer, defaultTransition, viewportOnce } from "@/lib/animations";
+import { featuredProjects as projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
-const projects = [
-  {
-    title: "Georgian Bay Harbour",
-    location: "Ontario, Canada",
-    type: "Residential",
-    status: "Completed",
-    description: "Thoughtfully designed townhomes with modern amenities tailored for growing families.",
-    image: "/image/hero-townhomes.png",
-  },
-  {
-    title: "Lux Condos",
-    location: "Ontario, Canada",
-    type: "Condo",
-    status: "Completed",
-    description: "Premium condominium residences built for urban professionals seeking refined living.",
-    image: "/image/hero-condos.png",
-  },
-  {
-    title: "Georgian Bay Terrace",
-    location: "Ontario, Canada",
-    type: "Mixed-Use",
-    status: "In Progress",
-    description: "A vibrant mixed-use community blending residential and commercial spaces.",
-    image: null,
-    gradient: "from-[#C41230] via-[#9B0E26] to-[#1A1A2E]",
-  },
-];
-
-function ProjectCard({ project }: { project: typeof projects[number] }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group cursor-pointer overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.18)] transition-shadow duration-300">
       <div className="relative h-52 sm:h-64 overflow-hidden">
@@ -107,19 +81,19 @@ export function ProjectsSection() {
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Our Portfolio
             </span>
-            <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-accent sm:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-accent sm:text-4xl lg:text-5xl">
               Our Featured <span className="text-primary">Projects</span>
             </h2>
             <div className="mt-4 h-1 w-12 bg-primary rounded-full" />
-            <p className="mt-4 text-lg leading-relaxed text-text-secondary max-w-md">
-              Go through our project portfolio below. We have over 2,000 units currently under development.
+            <p className="mt-4 text-base leading-relaxed text-text-secondary max-w-md sm:text-lg">
+              Go through our project portfolio below. We have over 7,000 units currently under development across Canada and the United States.
             </p>
           </div>
 
           {/* Browse All — desktop only in header */}
           <Link
             href="/properties"
-            className="hidden sm:inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
+            className="hidden sm:inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
           >
             Browse All
             <ArrowRight className="h-4 w-4" />
@@ -155,7 +129,7 @@ export function ProjectsSection() {
           {/* Browse All — mobile only below carousel */}
           <Link
             href="/properties"
-            className="mt-6 w-full justify-center inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
+            className="mt-6 w-full justify-center inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary/20 transition-colors duration-200 hover:bg-primary-dark"
           >
             Browse All
             <ArrowRight className="h-4 w-4" />
@@ -168,7 +142,7 @@ export function ProjectsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {projects.map((project, i) => (
             <motion.div
