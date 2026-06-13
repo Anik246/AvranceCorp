@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
 // motion.img used in lightbox to avoid next/image fill constraints
@@ -16,12 +16,24 @@ const MAX_VISIBLE = 5;
 export function GalleryLightbox({ images, projectTitle }: Props) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const prev = useCallback(() =>
     setCurrent((c) => (c - 1 + images.length) % images.length), [images.length]);
 
   const next = useCallback(() =>
     setCurrent((c) => (c + 1) % images.length), [images.length]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
 
   const openAt = (i: number) => { setCurrent(i); setOpen(true); };
 
@@ -67,14 +79,14 @@ export function GalleryLightbox({ images, projectTitle }: Props) {
       </div>
 
       {/* Section */}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((src, i) => {
           const isOverflow = i === MAX_VISIBLE - 1 && remaining > 0;
           return (
             <div
               key={i}
               onClick={() => openAt(i)}
-              className="group relative aspect-video cursor-pointer overflow-hidden rounded-2xl bg-border transform-gpu"
+              className={`group relative cursor-pointer overflow-hidden rounded-2xl bg-border transform-gpu aspect-video ${i === 0 ? "col-span-2 sm:col-span-1" : ""}`}
             >
               <Image
                 src={src}
@@ -96,10 +108,10 @@ export function GalleryLightbox({ images, projectTitle }: Props) {
 
               {/* "+N more" overlay on last visible tile */}
               {isOverflow && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/60 transition-colors duration-300 group-hover:bg-black/70">
-                  <Images className="h-6 w-6 text-white/70" />
-                  <span className="font-display text-4xl font-black text-white leading-none">+{remaining}</span>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-white/50">more photos</span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 sm:gap-2 bg-black/60 transition-colors duration-300 group-hover:bg-black/70">
+                  <Images className="h-4 w-4 sm:h-6 sm:w-6 text-white/70" />
+                  <span className="font-display text-2xl sm:text-4xl font-black text-white leading-none">+{remaining}</span>
+                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/50">more photos</span>
                 </div>
               )}
             </div>
@@ -140,13 +152,15 @@ export function GalleryLightbox({ images, projectTitle }: Props) {
 
             {/* Main image */}
             <div
-              className="relative flex flex-1 items-center justify-center overflow-hidden px-14 sm:px-20"
+              className="relative flex flex-1 items-center justify-center overflow-hidden sm:px-20"
               onClick={(e) => e.stopPropagation()}
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
             >
               {images.length > 1 && (
                 <button
                   onClick={prev}
-                  className="absolute left-2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:left-4"
+                  className="absolute left-2 z-10 hidden sm:flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:left-4"
                   aria-label="Previous"
                 >
                   <ChevronLeft className="h-6 w-6" />
@@ -169,7 +183,7 @@ export function GalleryLightbox({ images, projectTitle }: Props) {
               {images.length > 1 && (
                 <button
                   onClick={next}
-                  className="absolute right-2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:right-4"
+                  className="absolute right-2 z-10 hidden sm:flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:right-4"
                   aria-label="Next"
                 >
                   <ChevronRight className="h-6 w-6" />
@@ -177,10 +191,29 @@ export function GalleryLightbox({ images, projectTitle }: Props) {
               )}
             </div>
 
-            {/* Thumbnail strip */}
+            {/* Dot indicators — mobile only */}
             {images.length > 1 && (
               <div
-                className="flex shrink-0 items-center justify-center gap-2 overflow-x-auto px-4 py-4 scrollbar-none"
+                className="flex sm:hidden shrink-0 items-center justify-center gap-2 py-4"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {images.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === current ? "w-5 h-1.5 bg-primary" : "w-1.5 h-1.5 bg-white/30"
+                    }`}
+                    aria-label={`Photo ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Thumbnail strip — desktop only */}
+            {images.length > 1 && (
+              <div
+                className="hidden sm:flex shrink-0 items-center justify-center gap-2 overflow-x-auto px-4 py-4 scrollbar-none"
                 onClick={(e) => e.stopPropagation()}
               >
                 {images.map((src, i) => (
