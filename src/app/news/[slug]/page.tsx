@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowLeft, Calendar, ArrowRight, ChevronRight, Clock } from "lucide-react";
 import allPostsRaw from "@/data/news.json";
 
 type Post = {
@@ -38,14 +38,20 @@ function cleanExcerptHtml(html: string) {
   return html
     .replace(/<a[^>]*class="more-link"[^>]*>[\s\S]*?<\/a>/g, "")
     .replace(/&hellip;/g, "...")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#8211;/g, ",")
-    .replace(/&#8212;/g, ",")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#8211;/g, "–")
+    .replace(/&#8212;/g, "—")
     .replace(/&#8220;/g, "“")
     .replace(/&#8221;/g, "”")
     .replace(/&#8216;/g, "‘")
     .replace(/&#8217;/g, "’")
     .trim();
+}
+
+function getReadingTime(html: string): number {
+  const text = html.replace(/<[^>]*>/g, "");
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
 }
 
 function categorize(title: string): string {
@@ -114,8 +120,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ""
   ).trim();
 
+  const readingTime = getReadingTime(bodyHtml);
+
   return (
     <main>
+
       {/* Hero */}
       <section className="relative bg-accent overflow-hidden">
         {post.image && (
@@ -145,9 +154,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1 className="mt-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
             {stripHtml(post.title)}
           </h1>
-          <div className="mt-5 flex items-center gap-2 text-base font-semibold text-white/80">
-            <Calendar className="h-4 w-4 text-primary" />
-            {formatDate(post.date)}
+          <div className="mt-5 flex items-center gap-4 text-sm text-white/70">
+            <span className="flex items-center gap-1.5 font-semibold">
+              <Calendar className="h-4 w-4 text-primary" />
+              {formatDate(post.date)}
+            </span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span className="flex items-center gap-1.5">
+              <Clock className="h-4 w-4 text-primary" />
+              {readingTime} min read
+            </span>
           </div>
         </div>
       </section>
@@ -172,27 +188,67 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {/* Article body */}
       <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 sm:px-8">
+        <div className="mx-auto max-w-3xl px-6 sm:px-8">
           <div className="py-12 lg:py-16">
+
+            {/* Byline */}
+            <div className="flex items-center gap-3 pb-8 mb-8 border-b border-border">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary">
+                <span className="text-xs font-bold text-white">AC</span>
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm font-bold text-accent leading-none">AvranceCorp Developments</p>
+                <p className="text-sm text-text-secondary mt-1">Published · {formatDate(post.date)}</p>
+              </div>
+              <span className="ml-auto shrink-0 inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-semibold text-text-secondary">
+                <Clock className="h-3 w-3 text-primary" />
+                {readingTime} min read
+              </span>
+            </div>
+
+            {/* Body content */}
             <div
-              className="text-base leading-relaxed text-text-secondary sm:text-lg [&>p]:mb-5 [&>p:last-child]:mb-0 [&>h3]:mt-10 [&>h3]:mb-4 [&>h3]:font-display [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-accent [&_strong]:font-bold [&_strong]:text-accent [&_em]:italic [&>ul]:mb-6 [&>ul]:space-y-2 [&>ul>li]:pl-4 [&>ul>li]:relative [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-3 [&>ul>li]:before:h-1.5 [&>ul>li]:before:w-1.5 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-primary [&>ul>li]:before:content-['']"
+              className="
+                text-[1.0625rem] leading-[1.85] text-text-secondary
+                [&>p]:mb-6 [&>p:last-child]:mb-0
+                [&>p:first-child]:text-base [&>p:first-child]:font-medium [&>p:first-child]:text-accent/80 [&>p:first-child]:leading-relaxed [&>p:first-child]:border-l-4 [&>p:first-child]:border-primary [&>p:first-child]:pl-4 [&>p:first-child]:py-1
+                [&>h2]:mt-10 [&>h2]:mb-3 [&>h2]:font-display [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-accent
+                [&>h3]:mt-10 [&>h3]:mb-3 [&>h3]:font-display [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-accent
+                [&>blockquote]:my-8 [&>blockquote]:rounded-r-xl [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:bg-bg-subtle [&>blockquote]:px-6 [&>blockquote]:py-5 [&>blockquote]:text-lg [&>blockquote]:italic [&>blockquote]:text-accent/80 [&>blockquote]:leading-relaxed
+                [&_strong]:font-bold [&_strong]:text-accent
+                [&_em]:italic
+                [&>ul]:mb-6 [&>ul]:space-y-2.5
+                [&>ul>li]:relative [&>ul>li]:pl-5
+                [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[0.6em] [&>ul>li]:before:h-1.5 [&>ul>li]:before:w-1.5 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-primary [&>ul>li]:before:content-['']
+              "
               dangerouslySetInnerHTML={{ __html: bodyHtml }}
             />
 
             {/* Media Contact */}
-            <div className="mt-12 border-t border-border pt-8">
-              <h3 className="font-display text-xl font-bold text-accent mb-4">Media Contact</h3>
-              <div className="border-l-2 border-primary pl-5">
-                <span className="block text-base font-bold text-accent mb-1">Kenai Andrews</span>
-                <span className="block text-sm font-medium text-text-secondary mb-3">Director, Media &amp; Investor Relations &nbsp;·&nbsp; AvranceCorp Developments</span>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wide text-text-secondary w-12">Email</span>
-                    <a href="mailto:kenai@avrancecorp.com" className="text-sm font-semibold text-primary">kenai@avrancecorp.com</a>
+            <div className="mt-14 border-t border-border pt-10">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Media Contact</p>
+              <div className="flex flex-col gap-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent">
+                    <span className="text-sm font-bold text-white">KA</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wide text-text-secondary w-12">Phone</span>
-                    <a href="tel:+16473688888" className="text-sm font-semibold text-primary">+1 647-368-8888</a>
+                  <div>
+                    <p className="text-base font-bold text-accent">Kenai Andrews</p>
+                    <p className="text-sm text-text-secondary mt-0.5">Director, Media &amp; Investor Relations · AvranceCorp Developments</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 pl-1">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Email</span>
+                    <a href="mailto:kenai@avrancecorp.com" className="text-sm font-semibold text-primary hover:underline transition-colors">
+                      kenai@avrancecorp.com
+                    </a>
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Phone</span>
+                    <a href="tel:+16473688888" className="text-sm font-semibold text-primary hover:underline transition-colors">
+                      +1 647-368-8888
+                    </a>
                   </div>
                 </div>
               </div>
@@ -269,6 +325,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </div>
+
     </main>
   );
 }
