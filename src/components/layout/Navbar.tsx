@@ -11,7 +11,7 @@ import { ChevronDown, LogIn, X } from "lucide-react";
 type NavItem = {
   label: string;
   href: string;
-  children?: { label: string; href: string; desc?: string }[];
+  children?: { label: string; href: string; desc?: string; image?: string }[];
 };
 
 const NAV_LINKS: NavItem[] = [
@@ -27,12 +27,12 @@ const NAV_LINKS: NavItem[] = [
     label: "Our Community",
     href: "/properties",
     children: [
-      { label: "Springbank Lux Condos", href: "/properties" },
-      { label: "Wayne Lux Estate", href: "/properties" },
-      { label: "Georgian Bay Harbour", href: "/properties" },
-      { label: "Georgian Bay Terrace", href: "/properties" },
-      { label: "T-City Condos Phase II", href: "/properties" },
-      { label: "Wasaga Community", href: "/properties" },
+      { label: "Springbank Lux Condos",  href: "/properties/springbank-lux-condos",  image: "/image/projects/springbank-lux/slc-cover.jpg",       desc: "London, Ontario"        },
+      { label: "WayneLux Estate",        href: "/properties/waynelux-estate",         image: "/image/projects/waynelux-estate-1.jpg",                desc: "Romulus, Michigan"      },
+      { label: "Georgian Bay Harbour",   href: "/properties/georgian-bay-harbour",    image: "/image/projects/georgian-bay-harbour/GBH-cover.png",  desc: "Meaford, Ontario"       },
+      { label: "Georgian Bay Terrace",   href: "/properties/georgian-bay-terrace",    image: "/image/projects/georgian-bay-terrace/gbt-cover.jpg",  desc: "Meaford, Ontario"       },
+      { label: "T-City Condos Phase II", href: "/properties/t-city-condos-phase-ii",  image: "/image/projects/t-city-condos/tcc-cover.png",         desc: "North York, Ontario"    },
+      { label: "Wasaga Lux Condos",      href: "/properties/wasaga-lux-condos",       image: "/image/projects/wasaga-lux/wlc-cover.jpg",            desc: "Wasaga Beach, Ontario"  },
     ],
   },
   { label: "Projects", href: "/properties" },
@@ -157,17 +157,35 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
                       transition={{ duration: 0.15, ease: "easeOut" }}
-                      className="absolute left-0 top-full z-50 pt-2 min-w-52"
+                      className="absolute left-0 top-full z-50 pt-2 min-w-72"
                     >
-                      <div className="overflow-hidden rounded-2xl bg-primary shadow-[0_8px_32px_rgba(196,18,48,0.3)]">
+                      <div className="overflow-hidden rounded-2xl bg-accent shadow-[0_8px_32px_rgba(0,0,0,0.25)]">
                         <div className="p-1.5">
                           {link.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
-                              className="block whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium text-white/85 transition-colors duration-150 hover:bg-white/15 hover:text-white"
+                              className="group/item flex items-center gap-3 rounded-xl px-3 py-2 transition-colors duration-150 hover:bg-white/8"
                             >
-                              {child.label}
+                              {child.image && (
+                                <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded-sm">
+                                  <Image
+                                    src={child.image}
+                                    alt={child.label}
+                                    fill
+                                    className="object-cover"
+                                    sizes="80px"
+                                  />
+                                </div>
+                              )}
+                              <div>
+                                <span className="block whitespace-nowrap text-sm font-semibold text-white/85 transition-colors group-hover/item:text-white">
+                                  {child.label}
+                                </span>
+                                {child.desc && (
+                                  <span className="block text-xs text-white/40 mt-0.5">{child.desc}</span>
+                                )}
+                              </div>
                             </Link>
                           ))}
                         </div>
@@ -257,9 +275,25 @@ export function Navbar() {
                                 <Link
                                   href={child.href}
                                   onClick={() => setMenuOpen(false)}
-                                  className="block py-2.5 text-sm text-zinc-500 hover:text-primary transition-colors"
+                                  className="flex items-center gap-3 py-2 text-sm text-zinc-500 hover:text-primary transition-colors"
                                 >
-                                  {child.label}
+                                  {child.image && (
+                                    <div className="relative h-9 w-14 shrink-0 overflow-hidden rounded-sm">
+                                      <Image
+                                        src={child.image}
+                                        alt={child.label}
+                                        fill
+                                        className="object-cover"
+                                        sizes="48px"
+                                      />
+                                    </div>
+                                  )}
+                                  <div>
+                                    <span className="block text-sm text-zinc-600 group-hover:text-primary">{child.label}</span>
+                                    {child.desc && (
+                                      <span className="block text-xs text-zinc-400 mt-0.5">{child.desc}</span>
+                                    )}
+                                  </div>
                                 </Link>
                               </li>
                             ))}

@@ -129,8 +129,8 @@ export function LeadershipSection() {
                     </div>
                   ) : (
                     <div className={`relative h-44 sm:h-52 lg:h-60 bg-linear-to-br ${member.gradient} flex items-center justify-center`}>
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white/20 bg-white/10 backdrop-blur-sm">
-                        <span className="font-display text-3xl font-bold text-white">{member.initials}</span>
+                      <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border-4 border-white/20 bg-white/10 backdrop-blur-sm">
+                        <span className="font-display text-xl sm:text-2xl font-bold text-white">{member.initials}</span>
                       </div>
                     </div>
                   )}
