@@ -44,7 +44,7 @@ export function AboutClient() {
       {/* Hero */}
       <section className="relative min-h-96 overflow-hidden bg-accent flex items-end">
         <Image
-          src="/image/who we are.png"
+          src="/image/who-we-are.png"
           alt=""
           fill
           priority
@@ -106,7 +106,7 @@ export function AboutClient() {
 
             <motion.div {...fadeUp(0.15)} className="relative aspect-4/5 overflow-hidden rounded-2xl bg-border lg:sticky lg:top-28">
               <Image
-                src="/image/who we are.png"
+                src="/image/who-we-are.png"
                 alt="Who We Are - AvranceCorp"
                 fill
                 className="object-cover"

@@ -7,7 +7,7 @@ import { fadeUp, defaultTransition, viewportOnce } from "@/lib/animations";
 const steps = [
   {
     number: "01",
-    icon: "/image/due deligence.png",
+    icon: "/image/due-diligence.png",
     title: "Due Diligence",
     description: "Comprehensive research and feasibility analysis to identify viable development opportunities.",
   },
@@ -19,7 +19,7 @@ const steps = [
   },
   {
     number: "03",
-    icon: "/image/design and planning.png",
+    icon: "/image/design-and-planning.png",
     title: "Design & Planning",
     description: "Developing architectural concepts and obtaining required approvals.",
   },

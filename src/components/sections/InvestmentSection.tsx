@@ -40,7 +40,7 @@ export function InvestmentSection() {
           <div className="flex gap-3" style={{ flex: 1 }}>
             <div className="relative rounded-2xl overflow-hidden" style={{ flex: 1 }}>
               <Image
-                src="/image/ChatGPT Image Jun 9, 2026, 10_37_44 AM.png"
+                src="/image/investment-bg.png"
                 alt="AvranceCorp investment"
                 fill
                 className="object-cover object-center"

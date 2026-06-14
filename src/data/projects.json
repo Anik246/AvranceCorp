@@ -74,9 +74,7 @@
         "/image/projects/t-city-condos/tcc-3.jpg",
         "/image/projects/t-city-condos/tcc-4.jpg",
         "/image/projects/t-city-condos/tcc-5.jpg",
-        "/image/projects/t-city-condos/tcc-6.jpg",
-        "/image/projects/t-city-condos/tcc-7.bmp",
-        "/image/projects/t-city-condos/tcc-8.bmp"
+        "/image/projects/t-city-condos/tcc-6.jpg"
       ],
       "timeline": [
         { "label": "OPA / Zoning Application", "value": "In Progress", "done": false },
