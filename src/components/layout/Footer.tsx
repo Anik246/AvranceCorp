@@ -134,7 +134,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/30">
-            © Copyright 2016–{new Date().getFullYear()}, AvranceCorp Developments, a subsidiary of eGOLIA GROUP
+            © Copyright 2016–{new Date().getFullYear()}, AvranceCorp Developments, a subsidiary of Egolia GROUP
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Use"].map((item) => (
