@@ -96,11 +96,12 @@ const professionals: Member[] = [
     initials: "RL",
   },
   {
-    name: "Pauline Lewis",
+    name: "Renata Kuberka",
     title: "Executive Assistant",
-    photo: "/image/team/pauline-lewis.png",
+    photo: "/image/team/renata-kuberka.png",
     gradient: "from-[#1A1A2E] via-[#2A2A4E] to-[#C41230]",
-    initials: "PL",
+    initials: "RK",
+    bio: "Renata Kuberka is an Executive Assistant, Receptionist, and Front Office Coordinator supporting Egolia Group, AvranceCorp Developments, and TradeREA. She manages reception services, client and stakeholder communications, executive scheduling, meeting and event coordination, office administration, and operational support across construction, sales, marketing, investor relations, and partnership activities. Renata plays an important role in ensuring a professional customer experience while supporting leadership teams in the successful execution of strategic initiatives.",
   },
 ];
 
