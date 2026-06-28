@@ -56,15 +56,6 @@ const professionals: Member[] = [
     initials: "SS",
   },
   {
-    name: "Patrick Williams",
-    title: "VP of Operations",
-    photo: "/image/team/patrick-williams.png",
-    gradient: "from-[#C41230] via-[#9B0E26] to-[#1A1A2E]",
-    initials: "PW",
-    phone: "+1 (647) 499-4277",
-    email: "patrick@avrancecorp.com",
-  },
-  {
     name: "Ellen Radojevic",
     title: "VP of Sales",
     photo: "/image/team/ellen-radojevic.png",
