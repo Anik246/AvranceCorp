@@ -12,7 +12,7 @@ const pillars = [
 
 export function InvestmentSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-110 overflow-hidden">
+    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-110 lg:max-h-160 overflow-hidden">
 
       {/* Left — floating photo collage */}
       <motion.div
@@ -23,7 +23,7 @@ export function InvestmentSection() {
         transition={defaultTransition}
         className="relative bg-[#0D0D1A] h-96 lg:h-auto overflow-hidden"
       >
-        <div className="absolute inset-0 p-4 lg:px-16 lg:py-24 flex flex-col gap-3">
+        <div className="absolute inset-0 p-4 lg:p-8 flex flex-col gap-3">
 
           {/* Top — full width large image */}
           <div className="relative rounded-2xl overflow-hidden" style={{ flex: 1.5 }}>

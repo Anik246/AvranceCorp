@@ -65,7 +65,7 @@ export function Footer() {
                 alt="AvranceCorp"
                 width={180}
                 height={120}
-                className="object-contain"
+                className="object-contain w-44 h-auto"
                 unoptimized
               />
             </Link>

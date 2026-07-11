@@ -92,7 +92,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.28 }}
-              className="font-display text-2xl font-medium leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
+              className="font-display text-3xl font-medium leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl"
             >
               <em className="not-italic bg-linear-to-r from-[#C41230] via-[#E8192C] to-[#C41230] bg-clip-text text-transparent">From Concept to Creation</em>
             </motion.div>

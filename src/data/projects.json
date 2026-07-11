@@ -1,6 +1,57 @@
 {
   "projects": [
     {
+      "title": "3100 Weston Road Townhouse",
+      "slug": "3100-weston-road-townhouse",
+      "location": "North York, Ontario",
+      "address": "3100 Weston Road, North York, ON",
+      "status": "Ongoing",
+      "description": "A 50-unit back-to-back stacked townhouse development in North York — 4 storeys with basement, designed by Lumbao Architecture Inc. Secured by a $15M senior mortgage token backed by land valued at $34M (44% LTV), offering investors quarterly dividend distributions with an expected annual yield of 8.7%.",
+      "image": "/image/projects/3100-weston-road-townhouse/img15.jpg",
+      "gradient": "from-[#1A1A2E] via-[#2A2A4E] to-[#C41230]",
+      "featured": true,
+      "units": "50 townhouse units",
+      "occupancy": "TBD",
+      "website": null,
+      "sold": null,
+      "gallery": [
+        "/image/projects/3100-weston-road-townhouse/img15.jpg",
+        "/image/projects/3100-weston-road-townhouse/img18.jpg",
+        "/image/projects/3100-weston-road-townhouse/img21.jpg",
+        "/image/projects/3100-weston-road-townhouse/img24.jpg",
+        "/image/projects/3100-weston-road-townhouse/img27.jpg",
+        "/image/projects/3100-weston-road-townhouse/img30.jpg",
+        "/image/projects/3100-weston-road-townhouse/img33.jpg",
+        "/image/projects/3100-weston-road-townhouse/img36.jpg",
+        "/image/projects/3100-weston-road-townhouse/img39.jpg",
+        "/image/projects/3100-weston-road-townhouse/img42.jpg",
+        "/image/projects/3100-weston-road-townhouse/img45.jpg",
+        "/image/projects/3100-weston-road-townhouse/img48.jpg",
+        "/image/projects/3100-weston-road-townhouse/img51.jpg",
+        "/image/projects/3100-weston-road-townhouse/img54.jpg",
+        "/image/projects/3100-weston-road-townhouse/img57.jpg"
+      ],
+      "timeline": [
+        { "label": "Planning", "value": "Approved", "done": true },
+        { "label": "Site Plan", "value": "Approved", "done": true },
+        { "label": "Building Permit", "value": "TBD", "done": false },
+        { "label": "Construction", "value": "TBD", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "50 back-to-back stacked townhouse units",
+        "4-storey with basement",
+        "Units from 1,392 to 2,016 sq ft",
+        "Designed by Lumbao Architecture Inc.",
+        "$15M senior mortgage token — 44% LTV",
+        "Land valued at $34M",
+        "Expected annual yield of 8.7%",
+        "Quarterly dividend distributions",
+        "3-year investment term",
+        "High-end interior finishes"
+      ]
+    },
+    {
       "title": "Georgian Bay Harbour",
       "slug": "georgian-bay-harbour",
       "location": "Meaford, Ontario",

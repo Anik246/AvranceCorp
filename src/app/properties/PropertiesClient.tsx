@@ -1,16 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 
 const MotionLink = motion.create(Link);
 import { projects, completedProjects } from "@/data/projects";
 
 const FILTERS = ["All", "Ontario", "Michigan", "Ongoing"] as const;
 type Filter = (typeof FILTERS)[number];
+
+const PER_PAGE = 6;
 
 function getFiltered(active: Filter) {
   if (active === "All") return projects;
@@ -24,7 +26,26 @@ function getCount(filter: Filter) {
 
 export function PropertiesClient() {
   const [active, setActive] = useState<Filter>("All");
+  const [page, setPage] = useState(1);
+  const gridRef = useRef<HTMLDivElement>(null);
+
   const filtered = getFiltered(active);
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+  function scrollToGrid() {
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function handleFilter(f: Filter) {
+    setActive(f);
+    setPage(1);
+  }
+
+  function handlePageChange(n: number) {
+    setPage(n);
+    scrollToGrid();
+  }
 
   return (
     <>
@@ -35,7 +56,7 @@ export function PropertiesClient() {
             {FILTERS.map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActive(tab)}
+                onClick={() => handleFilter(tab)}
                 className={`shrink-0 inline-flex items-center gap-2.5 rounded-full px-6 py-2.5 text-base font-semibold transition-all duration-200 ${
                   active === tab
                     ? "bg-primary text-white shadow-md shadow-primary/25"
@@ -59,7 +80,7 @@ export function PropertiesClient() {
       </div>
 
       {/* Section */}
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+      <div ref={gridRef} className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
 
         {/* Result label */}
         <div className="mb-8 flex items-center justify-between">
@@ -72,7 +93,7 @@ export function PropertiesClient() {
           </p>
           {active !== "All" && (
             <button
-              onClick={() => setActive("All")}
+              onClick={() => handleFilter("All")}
               className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/8 px-4 py-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:bg-primary hover:text-white"
             >
               × Clear filter
@@ -85,18 +106,17 @@ export function PropertiesClient() {
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
+            {paginated.map((project, i) => (
               <MotionLink
-                key={`${active}-${project.slug}`}
+                key={`${active}-${page}-${project.slug}`}
                 href={`/properties/${project.slug}`}
                 layout
                 initial={{ opacity: 0, y: 24, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -12, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] as any }}
+                transition={{ duration: 0.3, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] as any }}
                 className="group block overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_48px_rgba(196,18,48,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
-                {/* Image / Gradient */}
                 <div className="relative h-56 overflow-hidden">
                   {project.image ? (
                     <Image
@@ -109,11 +129,7 @@ export function PropertiesClient() {
                   ) : (
                     <div className={`absolute inset-0 bg-linear-to-br ${project.gradient}`} />
                   )}
-
-                  {/* Dark overlay for depth */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
-
-                  {/* Status badge */}
                   <div className="absolute bottom-4 left-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
@@ -121,20 +137,14 @@ export function PropertiesClient() {
                     </span>
                   </div>
                 </div>
-
-                {/* Content */}
                 <div className="bg-accent px-6 py-6">
-                  {/* Red accent bar */}
                   <div className="mb-4 h-0.5 w-8 bg-primary transition-all duration-300 group-hover:w-16" />
-
                   <h3 className="font-display text-xl font-bold leading-snug text-white mb-2.5 transition-colors duration-300 group-hover:text-primary">
                     {project.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-white/60 line-clamp-2 mb-5">
                     {project.description}
                   </p>
-
-                  {/* Footer row */}
                   <div className="flex items-center justify-between border-t border-white/10 pt-4">
                     <div className="flex items-center gap-1.5 text-xs font-medium text-white/70">
                       <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" />
@@ -157,10 +167,45 @@ export function PropertiesClient() {
             <p className="text-text-muted text-4xl mb-4">—</p>
             <p className="text-lg font-medium text-text-secondary">No projects found for this filter.</p>
             <button
-              onClick={() => setActive("All")}
+              onClick={() => handleFilter("All")}
               className="mt-4 text-sm font-semibold text-primary hover:underline"
             >
               View all projects
+            </button>
+          </div>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button
+              onClick={() => handlePageChange(Math.max(1, page - 1))}
+              disabled={page === 1}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 text-primary transition-all duration-200 hover:bg-primary hover:text-white hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+              <button
+                key={n}
+                onClick={() => handlePageChange(n)}
+                className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all duration-200 ${
+                  n === page
+                    ? "bg-primary text-white shadow-md shadow-primary/25"
+                    : "border border-primary/20 text-primary hover:bg-primary hover:text-white hover:border-primary"
+                }`}
+              >
+                {n}
+              </button>
+            ))}
+
+            <button
+              onClick={() => handlePageChange(Math.min(totalPages, page + 1))}
+              disabled={page === totalPages}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 text-primary transition-all duration-200 hover:bg-primary hover:text-white hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ChevronRightIcon className="h-4 w-4" />
             </button>
           </div>
         )}
@@ -168,14 +213,12 @@ export function PropertiesClient() {
 
       {/* Section */}
       <div className="bg-[#0D0D1A] relative overflow-hidden">
-        {/* Decorative background number */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 font-display text-[18rem] font-black leading-none text-white/2.5 select-none pointer-events-none hidden lg:block">
           JV
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
 
-          {/* Header */}
           <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
@@ -200,12 +243,11 @@ export function PropertiesClient() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {completedProjects.map((project, i) => (
+            {completedProjects.map((project) => (
               <div
                 key={project.title}
                 className="group overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Image or gradient top */}
                 <div className={`relative h-44 ${!project.image ? `bg-linear-to-br ${project.gradient}` : ""}`}>
                   {project.image && (
                     <Image
@@ -216,10 +258,7 @@ export function PropertiesClient() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   )}
-                  {/* Overlay for depth */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
-
-                  {/* Completed badge */}
                   <div className="absolute bottom-4 left-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/80 backdrop-blur-sm">
                       <span className="h-1.5 w-1.5 rounded-full bg-white/50" />
@@ -227,8 +266,6 @@ export function PropertiesClient() {
                     </span>
                   </div>
                 </div>
-
-                {/* Content */}
                 <div className="bg-white/4 border border-white/6 rounded-b-2xl px-5 py-5 backdrop-blur-sm">
                   <div className="mb-3 h-0.5 w-6 bg-primary transition-all duration-300 group-hover:w-10" />
                   <h3 className="font-display text-base font-bold text-white leading-tight group-hover:text-primary transition-colors duration-200">

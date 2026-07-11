@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const stats = [
-  { value: "6", label: "Active Projects" },
+  { value: "7", label: "Active Projects" },
   { value: "4", label: "Completed" },
-  { value: "2,000+", label: "Units" },
+  { value: "7,050+", label: "Units" },
   { value: "2", label: "Countries" },
 ];
 

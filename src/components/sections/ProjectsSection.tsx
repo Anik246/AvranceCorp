@@ -6,7 +6,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { fadeUp, staggerContainer, defaultTransition, viewportOnce } from "@/lib/animations";
-import { featuredProjects as projects } from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
+
+const projects = featuredProjects.slice(0, 3);
 import type { Project } from "@/data/projects";
 
 function ProjectCard({ project }: { project: Project }) {

@@ -5,9 +5,9 @@ import { fadeUp, staggerContainer, defaultTransition, viewportOnce } from "@/lib
 
 const stats = [
   { value: "2016", label: "Year Established", detail: "Nearly a decade of expertise" },
-  { value: "7,000+", label: "Residential Units", detail: "Under active development" },
-  { value: "$4B+", label: "Portfolio Value", detail: "Across Canada & USA" },
-  { value: "100%", label: "End-to-End", detail: "Full development lifecycle" },
+  { value: "7,050+", label: "Residential Units", detail: "Under active development" },
+  { value: "$4.1B+", label: "Portfolio Value", detail: "Across Canada & USA" },
+  { value: "7", label: "Active Projects", detail: "Across North America" },
 ];
 
 export function StatsSection() {
