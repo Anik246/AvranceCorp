@@ -1,12 +1,50 @@
 {
   "projects": [
     {
-      "title": "3100 Weston Road Townhouse",
-      "slug": "3100-weston-road-townhouse",
+      "title": "Enclave at 3100 Weston",
+      "slug": "enclave-at-3100-weston",
+      "location": "Ottawa, Ontario",
+      "address": "6430 Franktown Road, Ottawa, ON",
+      "status": "Ongoing",
+      "headline": "Enclave at 3100 Weston – 3,565-Unit Master-Planned Community",
+      "description": "Discover a new standard of community living at the Enclave at 3100 Weston, a master-planned residential development offering 3,565 thoughtfully designed homes across six distinct housing types. Featuring everything from single detached homes with private garages to executive townhomes, stacked units, and urban townhomes, the Enclave is built to serve families, professionals, and investors alike. With collector roads, dedicated open spaces, and dual property access, the Enclave offers the perfect balance of connectivity, variety, and long-term value in a vibrant new community.",
+      "image": "/image/projects/enclave-at-3100-weston/img56.jpg",
+      "gradient": null,
+      "featured": true,
+      "units": "3,565 total units",
+      "occupancy": "TBD",
+      "website": null,
+      "sold": null,
+      "gallery": [
+        "/image/projects/enclave-at-3100-weston/img56.jpg",
+        "/image/projects/enclave-at-3100-weston/img20.jpg",
+        "/image/projects/enclave-at-3100-weston/img68.jpg",
+        "/image/projects/enclave-at-3100-weston/img87.jpg"
+      ],
+      "timeline": [
+        { "label": "Zoning Amendment", "value": "Pending", "done": false },
+        { "label": "Site Plan Approval", "value": "Pending", "done": false },
+        { "label": "Building Permit", "value": "TBD", "done": false },
+        { "label": "Construction", "value": "TBD", "done": false }
+      ],
+      "amenities": null,
+      "highlights": [
+        "Detached Type Housing — 105 units",
+        "Executive Type Housing — 224 units",
+        "Stacked Type Housing 3-Storey — 2,832 units",
+        "Stacked Type Housing 4-Storey — 186 units",
+        "Back-to-Back Type Housing — 78 units",
+        "Urban Type Housing — 140 units"
+      ]
+    },
+    {
+      "title": "T-City Phase I",
+      "slug": "t-city-phase-i",
       "location": "North York, Ontario",
       "address": "3100 Weston Road, North York, ON",
       "status": "Ongoing",
-      "description": "A 50-unit back-to-back stacked townhouse development in North York — 4 storeys with basement, designed by Lumbao Architecture Inc. Secured by a $15M senior mortgage token backed by land valued at $34M (44% LTV), offering investors quarterly dividend distributions with an expected annual yield of 8.7%.",
+      "headline": "T-City Phase 1 – 50 Modern Townhomes",
+      "description": "Discover modern urban living at T-City Phase 1, an exclusive collection of 50 contemporary townhomes thoughtfully designed for families, professionals, and investors. Featuring spacious open-concept layouts, premium finishes, private outdoor spaces, and energy-efficient design, T-City offers the perfect blend of comfort, style, and convenience in a vibrant new community.",
       "image": "/image/projects/3100-weston-road-townhouse/img15.jpg",
       "gradient": "from-[#1A1A2E] via-[#2A2A4E] to-[#C41230]",
       "featured": true,
@@ -32,24 +70,13 @@
         "/image/projects/3100-weston-road-townhouse/img57.jpg"
       ],
       "timeline": [
-        { "label": "Planning", "value": "Approved", "done": true },
-        { "label": "Site Plan", "value": "Approved", "done": true },
+        { "label": "Zoning Amendment", "value": "Pending", "done": false },
+        { "label": "Site Plan", "value": "TBD", "done": false },
         { "label": "Building Permit", "value": "TBD", "done": false },
         { "label": "Construction", "value": "TBD", "done": false }
       ],
       "amenities": null,
-      "highlights": [
-        "50 back-to-back stacked townhouse units",
-        "4-storey with basement",
-        "Units from 1,392 to 2,016 sq ft",
-        "Designed by Lumbao Architecture Inc.",
-        "$15M senior mortgage token — 44% LTV",
-        "Land valued at $34M",
-        "Expected annual yield of 8.7%",
-        "Quarterly dividend distributions",
-        "3-year investment term",
-        "High-end interior finishes"
-      ]
+      "highlights": null
     },
     {
       "title": "Georgian Bay Harbour",

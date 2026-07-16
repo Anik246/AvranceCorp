@@ -14,7 +14,7 @@ import type { Project } from "@/data/projects";
 function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
-      href="/properties"
+      href={`/properties/${project.slug}`}
       className="group block overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.10)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.18)] transition-shadow duration-300"
     >
       <div className="relative h-52 sm:h-64 overflow-hidden">
@@ -88,7 +88,7 @@ export function ProjectsSection() {
             </h2>
             <div className="mt-4 h-1 w-12 bg-primary rounded-full" />
             <p className="mt-4 text-base leading-relaxed text-text-secondary max-w-md sm:text-lg">
-              Go through our project portfolio below. We have over 7,000 units currently under development across Canada and the United States.
+              Go through our project portfolio below. We have over 10,000 units currently under development across Canada and the United States.
             </p>
           </div>
 

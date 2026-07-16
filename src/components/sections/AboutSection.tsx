@@ -6,8 +6,8 @@ import { fadeUp, slideInLeft, slideInRight, defaultTransition, viewportOnce, sta
 
 const highlights = [
   { value: "2016",   label: "Year Founded" },
-  { value: "7,050+", label: "Residential Units" },
-  { value: "$4.1B+", label: "Portfolio Value" },
+  { value: "10,000+", label: "Residential Units" },
+  { value: "$6B+",   label: "Portfolio Value" },
   { value: "Canada\n& USA", label: "Operations" },
 ];
 
@@ -50,7 +50,7 @@ export function AboutSection() {
 
             <div className="mt-8 space-y-5 text-base leading-relaxed text-text-primary">
               <p>
-                Founded in 2016, AvranceCorp Developments is a Tarion-licensed Canadian real estate developer with a $4.1B+ portfolio and 7,050+ residential units in active development across Ontario and the United States.
+                Founded in 2016, AvranceCorp Developments is a Tarion-licensed Canadian real estate developer with a $6B+ portfolio and 10,000+ residential units in active development across Ontario and the United States.
               </p>
               <p>
                 Guided by urban planning principles and a commitment to innovation, our team manages every stage of the development lifecycle — from land acquisition and planning through design, construction, and project delivery. We create sustainable communities that balance affordability, investor value, and long-term quality of life.

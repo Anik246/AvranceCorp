@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ChevronDown, LogIn, X } from "lucide-react";
+import { featuredProjects } from "@/data/projects";
 
 type NavItem = {
   label: string;
@@ -27,12 +28,13 @@ const NAV_LINKS: NavItem[] = [
     label: "Our Community",
     href: "/properties",
     children: [
-      { label: "Springbank Lux Condos",  href: "/properties/springbank-lux-condos",  image: "/image/projects/springbank-lux/slc-cover.jpg",       desc: "London, Ontario"        },
-      { label: "WayneLux Estate",        href: "/properties/waynelux-estate",         image: "/image/projects/waynelux-estate-1.jpg",                desc: "Romulus, Michigan"      },
-      { label: "Georgian Bay Harbour",   href: "/properties/georgian-bay-harbour",    image: "/image/projects/georgian-bay-harbour/GBH-cover.png",  desc: "Meaford, Ontario"       },
-      { label: "Georgian Bay Terrace",   href: "/properties/georgian-bay-terrace",    image: "/image/projects/georgian-bay-terrace/gbt-cover.jpg",  desc: "Meaford, Ontario"       },
-      { label: "T-City Condos Phase II", href: "/properties/t-city-condos-phase-ii",  image: "/image/projects/t-city-condos/tcc-cover.png",         desc: "North York, Ontario"    },
-      { label: "Wasaga Lux Condos",      href: "/properties/wasaga-lux-condos",       image: "/image/projects/wasaga-lux/wlc-cover.jpg",            desc: "Wasaga Beach, Ontario"  },
+      ...featuredProjects.map((p) => ({
+        label: p.title,
+        href: `/properties/${p.slug}`,
+        image: p.image ?? undefined,
+        desc: p.location,
+      })),
+      { label: "View All Projects", href: "/properties" },
     ],
   },
   { label: "Projects", href: "/properties" },

@@ -13,8 +13,8 @@ const slides = [
 
 const stats = [
   { value: "2016",   label: "Year Established" },
-  { value: "7,000+", label: "Residential Units" },
-  { value: "$4B+",   label: "Portfolio Value" },
+  { value: "10,000+", label: "Residential Units" },
+  { value: "$6B+",    label: "Portfolio Value" },
   { value: "100%",   label: "End-to-End Delivery" },
 ];
 

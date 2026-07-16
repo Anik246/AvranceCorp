@@ -12,6 +12,7 @@ export type Project = {
   location: string;
   address: string;
   status: string;
+  headline?: string | null;
   description: string;
   image: string | null;
   gradient?: string | null;

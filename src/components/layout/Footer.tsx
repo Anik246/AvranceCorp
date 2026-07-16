@@ -78,7 +78,7 @@ export function Footer() {
             <div className="flex flex-col gap-3 mt-2">
               {[
                 { icon: MapPin, text: "Unit 1-2, 4205 Keele St, North York, ON M3J 3T8" },
-                { icon: Phone, text: "647-368-7108", href: "tel:6473687108" },
+                { icon: Phone, text: "+1 647-368-7108", href: "tel:+16473687108" },
                 { icon: Mail, text: "info@avrancecorp.com", href: "mailto:info@avrancecorp.com" },
               ].map(({ icon: Icon, text, href }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-white/50">

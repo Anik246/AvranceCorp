@@ -117,7 +117,10 @@ export default async function ProjectDetailPage({ params }: Props) {
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Overview</span>
               <h2 className="mt-2 font-display text-2xl font-bold text-accent sm:text-3xl">About This Project</h2>
               <div className="mt-3 h-1 w-10 bg-primary rounded-full" />
-              <p className="mt-6 text-base leading-relaxed text-accent font-medium sm:text-lg">{project.description}</p>
+              {project.headline && (
+                <h3 className="mt-6 font-display text-xl font-bold text-accent sm:text-2xl">{project.headline}</h3>
+              )}
+              <p className="mt-4 text-base leading-relaxed text-accent font-medium sm:text-lg">{project.description}</p>
 
               {/* Key facts chips */}
               <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-border pt-8 sm:grid-cols-3">
