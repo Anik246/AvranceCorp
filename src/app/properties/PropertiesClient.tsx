@@ -285,7 +285,7 @@ export function PropertiesClient() {
       {/* Section */}
       <div className="bg-primary">
         <div className="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
-          <div className="flex flex-col items-center justify-between gap-5 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-5 text-center sm:flex-row sm:text-left">
             <p className="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">
               Are you looking for a Joint Venture partnership?
             </p>

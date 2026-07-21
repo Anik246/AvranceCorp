@@ -1,14 +1,14 @@
 {
   "projects": [
     {
-      "title": "Enclave at 3100 Weston",
-      "slug": "enclave-at-3100-weston",
+      "title": "Enclave at Franktown Road, Richmond, Ottawa",
+      "slug": "enclave-at-franktown-road",
       "location": "Ottawa, Ontario",
-      "address": "6430 Franktown Road, Ottawa, ON",
+      "address": "6430 Franktown Road, Richmond, Ottawa, ON",
       "status": "Ongoing",
-      "headline": "Enclave at 3100 Weston – 3,565-Unit Master-Planned Community",
-      "description": "Discover a new standard of community living at the Enclave at 3100 Weston, a master-planned residential development offering 3,565 thoughtfully designed homes across six distinct housing types. Featuring everything from single detached homes with private garages to executive townhomes, stacked units, and urban townhomes, the Enclave is built to serve families, professionals, and investors alike. With collector roads, dedicated open spaces, and dual property access, the Enclave offers the perfect balance of connectivity, variety, and long-term value in a vibrant new community.",
-      "image": "/image/projects/enclave-at-3100-weston/img56.jpg",
+      "headline": "Enclave at Franktown Road – 3,565-Unit Master-Planned Community",
+      "description": "Discover a new standard of community living at the Enclave at Franktown Road, a master-planned residential development offering 3,565 thoughtfully designed homes across six distinct housing types. Featuring everything from single detached homes with private garages to executive townhomes, stacked units, and urban townhomes, the Enclave is built to serve families, professionals, and investors alike. With collector roads, dedicated open spaces, and dual property access, the Enclave offers the perfect balance of connectivity, variety, and long-term value in a vibrant new community.",
+      "image": "/image/projects/enclave-at-3100-weston/enclave-cover.png",
       "gradient": null,
       "featured": true,
       "units": "3,565 total units",
@@ -16,6 +16,7 @@
       "website": null,
       "sold": null,
       "gallery": [
+        "/image/projects/enclave-at-3100-weston/enclave-cover.png",
         "/image/projects/enclave-at-3100-weston/img56.jpg",
         "/image/projects/enclave-at-3100-weston/img20.jpg",
         "/image/projects/enclave-at-3100-weston/img68.jpg",
