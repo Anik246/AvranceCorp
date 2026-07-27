@@ -115,9 +115,9 @@ export function PropertiesClient() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -12, scale: 0.95 }}
                 transition={{ duration: 0.3, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] as any }}
-                className="group block overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_48px_rgba(196,18,48,0.18)] hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_48px_rgba(196,18,48,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 shrink-0 overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}
@@ -137,12 +137,12 @@ export function PropertiesClient() {
                     </span>
                   </div>
                 </div>
-                <div className="bg-accent px-6 py-6">
+                <div className="flex flex-col flex-1 bg-accent px-6 py-6">
                   <div className="mb-4 h-0.5 w-8 bg-primary transition-all duration-300 group-hover:w-16" />
-                  <h3 className="font-display text-xl font-bold leading-snug text-white mb-2.5 transition-colors duration-300 group-hover:text-primary">
+                  <h3 className="font-display text-xl font-bold leading-snug text-white mb-2.5 transition-colors duration-300 group-hover:text-primary line-clamp-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-white/60 line-clamp-2 mb-5">
+                  <p className="text-sm leading-relaxed text-white/60 line-clamp-2 mb-5 flex-1">
                     {project.description}
                   </p>
                   <div className="flex items-center justify-between border-t border-white/10 pt-4">
